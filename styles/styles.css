@@ -1,0 +1,33 @@
+body{
+    height: 100%;
+    margin: 0;
+    background: #192A56;
+}
+.main-container{
+    display: flex;
+    min-height: 100%;
+}
+
+.mode{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.selection{
+    background-color: orange;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 250px;
+}
+
+.board{
+    background-color: #000000; 
+    border-style: ridge;
+    border-width: 1px;
+    border-color : rgb(46, 46, 46);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 550px;
+    width: 75%;
+    margin: 20px; 
+}   

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PathFinding Visualizer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/690cab2d5c.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1" style="font-family: 'Dancing Script', cursive;font-size: 30px;">PathFinding Visualizer</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <button type="button" id="start" class="btn btn-outline-success">Start</button>
+                    <button type="button" id="reset" class="btn btn-outline-danger">Reset</button>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        <div class="main-container">
+            <div class="mode">
+                <button id ="btn-1" title="A* Path Finding Algorithm is used to find the single source shortest path in a weighted graph by calculating the heuristic and the distance from source of each node and choosing the most optimal route accordingly." class = "btn btn-primary selection" style="height: 70px">A* Path Finding Algorithm</button>
+                <button id ="btn-2" title="Dijikstra's Algorithm is used to find the single source shortest path in a weighted graph." class = "btn btn-primary selection" style="height: 70px">Dijkstra's Algorithm</button>
+                <button id ="btn-3" title="Depth First Search is a traversal algorithm that explores each node as deep as possible before backtracking." class = "btn btn-primary selection" style="height: 70px" >Depth First Search Algorithm</button>
+                <button id ="btn-4" title="Breadth First Search is a traversal algorithm that is used to find single source shortest path in an unweighted graph by exploring all the children of the current node first." class = "btn btn-primary selection" style="height: 70px">Breadth First Search Algorithm</button>
+            </div>
+            <table id="table" class="board" style="background-color: #30336B" ondragstart="return false;" ondrop="return false;"></table>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    </body>
+</html>

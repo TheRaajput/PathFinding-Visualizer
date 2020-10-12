@@ -101,7 +101,7 @@ class Algorithms
             await updateOpenSet(i,j)
             
         }
-        current==arr[end[0]][end[1]] ? await this.tracePathByParentArray(parent) : alert('No path exists :(');
+        current==arr[end[0]][end[1]] ? await this.tracePathByParentArray(parent) : alert('Oops! No path exists.');
         this.inProgress = false;
     }
 
@@ -132,7 +132,7 @@ class Algorithms
             }
             return false;
         }
-        await dfs_call(start[0],start[1])? await this.tracePathByPathArray(path):alert("No path exist");
+        await dfs_call(start[0],start[1])? await this.tracePathByPathArray(path):alert("Oops! No path exist");
         this.inProgress = false;
     }
 
@@ -148,27 +148,27 @@ class Algorithms
             parent.push(temp);
         }
         parent[start[0]][start[1]] = [start[0],start[1]];
-        async function bfs_call(){
-            var q = new Array(), off = [1,0,-1,0,1];
-            q.push([start[0],start[1]]);
-            while(q.length>0){
+        async function calling_bfs(){
+            var a = new Array(), off = [1,0,-1,0,1];
+            a.push([start[0],start[1]]);
+            while(a.length>0){
                 await sleep(50);
-                var size = q.length;
+                var size = a.length;
                 for(let x = 0; x < size; x++){
                     
-                    if(q[0][0]==end[0] && q[0][1]==end[1])
+                    if(a[0][0]==end[0] && a[0][1]==end[1])
                     return true;
-                    var front = q[0];
-                    q.shift();
+                    var front = a[0];
+                    a.shift();
                     for(let i = 0; i < 4; i++){
-                        let nbr_row = front[0] + off[i], nbr_col = front[1] + off[i+1];
-                        if(nbr_row>=0 && nbr_row<arr.length && nbr_col>=0 && nbr_col<arr[0].length && !isObstacle(arr[nbr_row][nbr_col]) && !isVisited(arr[nbr_row][nbr_col])){
-                            parent[nbr_row][nbr_col] = [front[0],front[1]];
-                            if(nbr_row==end[0] && nbr_col==end[1])
+                        let num_row = front[0] + off[i], num_col = front[1] + off[i+1];
+                        if(num_row>=0 && num_row<arr.length && num_col>=0 && num_col<arr[0].length && !isObstacle(arr[num_row][num_col]) && !isVisited(arr[num_row][num_col])){
+                            parent[num_row][num_col] = [front[0],front[1]];
+                            if(num_row==end[0] && num_col==end[1])
                             return true;
                             
-                            q.push([nbr_row,nbr_col]);
-                            markVisited(arr[nbr_row][nbr_col]);
+                            a.push([num_row,num_col]);
+                            markVisited(arr[num_row][num_col]);
                         }
                     }
                 }
@@ -177,7 +177,7 @@ class Algorithms
             return false;
         }
         
-        await bfs_call()? await this.tracePathByParentArray(parent): alert('No path exists :(');
+        await calling_bfs()? await this.tracePathByParentArray(parent): alert('Oops! No path exists.');
         this.inProgress = false;
         
     }
